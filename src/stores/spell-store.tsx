@@ -2,15 +2,17 @@ import { observable, action, computed } from 'mobx'
 
 export type TSpell = {
   name: string,
-  isUsed: boolean
+  isUsed: boolean,
+  level: number,
+  duration: number | null,
 }
 
 export class SpellStore {
-  @observable knownSpells = [{name:'flamestrike!', isUsed:false}] as TSpell[]
+  @observable knownSpells = [{name:'flamestrike!', level:3, duration:null, isUsed:false}] as TSpell[]
 
   @action
-  addKnownSpell(name: string) {
-    this.knownSpells.push({name, isUsed: false });
+  addKnownSpell(name: string, level: number, duration: number | null) {
+    this.knownSpells.push({name, level, duration, isUsed: false });
   }
 
   @action
