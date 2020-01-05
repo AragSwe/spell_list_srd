@@ -22,6 +22,11 @@ export class SpellStore {
       knownSpell.isUsed = true;
   }
 
+  @action
+  refreshSpells() {
+    this.knownSpells.forEach(s => s.isUsed = false);
+  }
+
   @computed
   get getUnusedSpells() {
     return this.knownSpells.filter(spell => !spell.isUsed)

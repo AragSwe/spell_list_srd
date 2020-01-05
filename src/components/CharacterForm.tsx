@@ -19,9 +19,9 @@ export const CharacterForm = observer(() => {
         <div>
             <h2>My character</h2>
             <input type="text" value={name} onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)} placeholder="Type character name here"></input>
-            <input type="number" value={level} onChange={(e: ChangeEvent<HTMLInputElement>) => setLevel(e.target.valueAsNumber)}></input>
-            <input type="number" value={wisdomModifier} onChange={(e: ChangeEvent<HTMLInputElement>) => setWisdomModifier(e.target.valueAsNumber)}></input>
-            <input type="submit" value="Update character" onClick={onSubmit}></input>
+            <input type="number" className="number" value={level} onChange={(e: ChangeEvent<HTMLInputElement>) => setLevel(e.target.valueAsNumber)}></input>
+            <input type="number" className="number" value={wisdomModifier} onChange={(e: ChangeEvent<HTMLInputElement>) => setWisdomModifier(e.target.valueAsNumber)}></input>
+            <input type="submit" className="button" value="Update character" onClick={onSubmit}></input>
         </div>
       )
 })

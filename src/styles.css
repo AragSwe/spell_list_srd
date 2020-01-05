@@ -1,0 +1,32 @@
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.number {
+    width: 3em;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: darkgrey;
+}
+
+h1, h2 {
+    color: white;
+    background-color: darkslategray;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 1em;
+}
+
+input {
+    margin-right: 1em;
+}

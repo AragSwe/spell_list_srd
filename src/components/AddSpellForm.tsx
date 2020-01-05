@@ -17,8 +17,8 @@ export const AddSpellForm = observer(() => {
             <h2>Add spell</h2>
             <div>
                 <input type="text" value={spellName} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellName(e.target.value)} placeholder="Type spell name here"></input>
-                <input type="number" value={spellLevel} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellLevel(e.target.valueAsNumber)}></input>
-                <input type="submit" value="Add spell" onClick={onSubmit}></input>
+                <input type="number" className="number" value={spellLevel} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellLevel(e.target.valueAsNumber)}></input>
+                <input type="submit" className="button" value="Add spell" onClick={onSubmit}></input>
             </div>
         </>
       )
