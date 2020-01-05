@@ -8,7 +8,7 @@ import './styles.css'
 
 class App extends React.Component {
     render() {
-        return <div>
+        return <div className="App">
             <h1>SRD Spell companion</h1>
             <CharacterForm />
             <TurnCounter />

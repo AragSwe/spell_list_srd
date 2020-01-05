@@ -12,6 +12,13 @@
 .number {
     width: 3em;
 }
+
+.App {
+    margin: auto;
+    width: 65%;
+    padding: 10px;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: darkgrey;
