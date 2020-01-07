@@ -6,7 +6,7 @@ export const SpellListItem = (props: { spell: TSpell }) => {
     return <>
     <InfoButton infoText={props.spell.description} header={props.spell.name} />
     <label>
-        Level {props.spell.level} { props.spell.name } { props.spell.duration && <span>{ props.spell.duration } </span>}
+        Level {props.spell.level} { props.spell.name } { props.spell.duration && <span>(Duration, { props.spell.duration } turns)</span>}
     </label>
     </>
 }

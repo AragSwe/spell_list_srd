@@ -17,6 +17,7 @@ export const TurnCounter = observer(() => {
     const onResetTurnCounter = (e: React.FormEvent) => { 
         e.preventDefault();
         setTurnCounter(1);
+        spellStore.abortActiveSpells();
     }
 
     return (

@@ -22,14 +22,14 @@ export const AddSpellForm = observer(() => {
         <>
             <ToggleSection header="Add spell" children={
                 <div>
-                    <input type="text" value={spellName} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellName(e.target.value)} placeholder="Type spell name here"></input>
-                    <input type="number" className="number" value={spellLevel} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellLevel(e.target.valueAsNumber)}></input>
+                    Name: <input type="text" value={spellName} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellName(e.target.value)} placeholder="Type spell name here"></input>
+                    Level: <input type="number" className="number" value={spellLevel} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellLevel(e.target.valueAsNumber)}></input>
                     Use duration? <input type="checkbox" defaultChecked={useDuration} onChange={(e: ChangeEvent<HTMLInputElement>) => setUseDuration(e.target.checked)} />
                     { useDuration && 
                         <input type="number" className="number" value={spellDuration} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellDuration(e.target.valueAsNumber)}></input>
                     }
                     <br />
-                    <textarea onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => setSpellDescription(e.target.value)} />
+                    Description: <textarea onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => setSpellDescription(e.target.value)} />
                     <Button caption="Add spell" onClick={onSubmit} />
                 </div>
             } />
