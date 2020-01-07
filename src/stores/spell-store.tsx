@@ -1,6 +1,7 @@
 import { observable, action, computed } from 'mobx'
 
 export type TSpell = {
+  id:number,
   name: string,
   isUsed: boolean,
   level: number,
@@ -9,16 +10,16 @@ export type TSpell = {
 }
 
 export class SpellStore {
-  @observable knownSpells = [{name:'flamestrike!', level:3, duration:null, isUsed:false, maxDuration: null}] as TSpell[]
+  @observable knownSpells = [{id: 0, name:'flamestrike!', level:3, duration:null, isUsed:false, maxDuration: null}] as TSpell[]
 
   @action
   addKnownSpell(name: string, level: number, duration: number | null) {
-    this.knownSpells.push({name, level, duration: null, isUsed: false, maxDuration: duration });
+    this.knownSpells.push({id: this.knownSpells.length, name, level, duration: null, isUsed: false, maxDuration: duration });
   }
 
   @action
-  castKnownSpell(name: string) {
-    var knownSpell = this.knownSpells.find(spell => spell.name === name);
+  castKnownSpell(id: number) {
+    var knownSpell = this.knownSpells.find(spell => spell.id === id);
     if (knownSpell) {
       knownSpell.isUsed = true;
       knownSpell.duration = knownSpell.maxDuration;
