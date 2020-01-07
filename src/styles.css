@@ -19,6 +19,18 @@
     padding: 10px;
 }
 
+.toggleButton {
+    width: 2em;
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: darkgrey;

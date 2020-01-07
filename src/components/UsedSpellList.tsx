@@ -2,6 +2,7 @@ import React from "react"
 import { observer } from "mobx-react"
 import { useStores } from "../hooks/use-stores"
 import { SpellListItem } from "./SpellListItem";
+import { Button } from "./Button";
 
 
 export const UsedSpellList = observer(() => {
@@ -10,8 +11,8 @@ export const UsedSpellList = observer(() => {
         <>
             <h2>Used spells</h2>
             {spellStore.getUsedSpells.length > 0 && 
-            <> 
-                <input type="button" className="button" value="Refresh spells" onClick={() => spellStore.refreshSpells()}></input>
+            <>
+                <Button caption="Refresh spells" onClick={() => spellStore.refreshSpells()} />
                 <ul>
                     { spellStore.getUsedSpells.map(s => 
                         <li><SpellListItem spell={s} /></li>
