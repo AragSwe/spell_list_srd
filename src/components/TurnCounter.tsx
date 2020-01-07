@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { observer } from "mobx-react"
-import { useStores } from "../hooks/use-stores";
+//import { useStores } from "../hooks/use-stores";
 import { Button } from "./Button";
 
 export const TurnCounter = observer(() => {
-    const { spellStore } = useStores();
+   //const { spellStore } = useStores();
     const [turnCounter, setTurnCounter] = useState(1);
 
     const onAdvanceTurnCounter = (e: React.FormEvent) => { 

@@ -8,10 +8,13 @@ export const AddSpellForm = observer(() => {
     const { spellStore } = useStores();
     const [spellName, setSpellName] = useState("");
     const [spellLevel, setSpellLevel] = useState(1);
+    const [useDuration, setUseDuration] = useState(false);
+    const [spellDuration, setSpellDuration] = useState(1);
 
     const onSubmit = (e: React.FormEvent) => { 
         e.preventDefault();
-        spellName && spellStore.addKnownSpell(spellName, spellLevel, null);
+        const duration = (useDuration && spellDuration) || null;
+        spellName && spellStore.addKnownSpell(spellName, spellLevel, duration);
     }
 
     return (
@@ -20,6 +23,10 @@ export const AddSpellForm = observer(() => {
                 <div>
                     <input type="text" value={spellName} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellName(e.target.value)} placeholder="Type spell name here"></input>
                     <input type="number" className="number" value={spellLevel} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellLevel(e.target.valueAsNumber)}></input>
+                    Use duration? <input type="checkbox" defaultChecked={useDuration} onChange={(e: ChangeEvent<HTMLInputElement>) => setUseDuration(e.target.checked)} />
+                    { useDuration && 
+                        <input type="number" className="number" value={spellDuration} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellDuration(e.target.valueAsNumber)}></input>
+                    }
                     <Button caption="Add spell" onClick={onSubmit} />
                 </div>
             } />
