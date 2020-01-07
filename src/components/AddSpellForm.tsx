@@ -10,11 +10,12 @@ export const AddSpellForm = observer(() => {
     const [spellLevel, setSpellLevel] = useState(1);
     const [useDuration, setUseDuration] = useState(false);
     const [spellDuration, setSpellDuration] = useState(1);
+    const [spellDescription, setSpellDescription] = useState("");
 
     const onSubmit = (e: React.FormEvent) => { 
         e.preventDefault();
         const duration = (useDuration && spellDuration) || null;
-        spellName && spellStore.addKnownSpell(spellName, spellLevel, duration);
+        spellName && spellStore.addKnownSpell(spellName, spellLevel, duration, spellDescription);
     }
 
     return (
@@ -27,6 +28,8 @@ export const AddSpellForm = observer(() => {
                     { useDuration && 
                         <input type="number" className="number" value={spellDuration} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellDuration(e.target.valueAsNumber)}></input>
                     }
+                    <br />
+                    <textarea value={spellDescription} onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => setSpellDescription(e.target.value)} />
                     <Button caption="Add spell" onClick={onSubmit} />
                 </div>
             } />

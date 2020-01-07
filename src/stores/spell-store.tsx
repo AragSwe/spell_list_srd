@@ -7,14 +7,32 @@ export type TSpell = {
   level: number,
   duration: number | null,
   maxDuration: number | null,
+  description: string
 }
 
 export class SpellStore {
-  @observable knownSpells = [{id: 0, name:'flamestrike!', level:3, duration:null, isUsed:false, maxDuration: null}] as TSpell[]
+  @observable knownSpells = [
+    {
+      id: 0,
+      name:'Flamestrike!',
+      level:3,
+      duration:null,
+      isUsed:false,
+      maxDuration: null,
+      description: "Deals MASSIVE damage to all enemies in a 10x10 feet cylinder."
+    }] as TSpell[]
 
   @action
-  addKnownSpell(name: string, level: number, duration: number | null) {
-    this.knownSpells.push({id: this.knownSpells.length, name, level, duration: null, isUsed: false, maxDuration: duration });
+  addKnownSpell(name: string, level: number, duration: number | null, description:string) {
+    this.knownSpells.push({
+      id: this.knownSpells.length,
+      name,
+      level,
+      duration: null,
+      isUsed: false,
+      maxDuration: duration,
+      description: description
+    });
   }
 
   @action
