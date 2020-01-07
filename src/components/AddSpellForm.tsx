@@ -29,7 +29,7 @@ export const AddSpellForm = observer(() => {
                         <input type="number" className="number" value={spellDuration} onChange={(e: ChangeEvent<HTMLInputElement>) => setSpellDuration(e.target.valueAsNumber)}></input>
                     }
                     <br />
-                    <textarea value={spellDescription} onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => setSpellDescription(e.target.value)} />
+                    <textarea onBlur={(e: React.FocusEvent<HTMLTextAreaElement>) => setSpellDescription(e.target.value)} />
                     <Button caption="Add spell" onClick={onSubmit} />
                 </div>
             } />

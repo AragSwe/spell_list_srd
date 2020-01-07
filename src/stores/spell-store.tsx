@@ -28,7 +28,7 @@ export class SpellStore {
       id: this.knownSpells.length,
       name,
       level,
-      duration: null,
+      duration: duration,
       isUsed: false,
       maxDuration: duration,
       description: description
