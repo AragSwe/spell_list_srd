@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent } from "react"
 import { observer } from "mobx-react"
 import { useStores } from "../hooks/use-stores"
 import { Button } from "./Button";
+import { NumberSelector } from "./NumberSelector";
 
 export const CharacterForm = observer(() => {
     const { characterStore } = useStores();
@@ -20,8 +21,8 @@ export const CharacterForm = observer(() => {
         <div>
             <h2>My character</h2>
             Name: <input type="text" value={name} onChange={(e: ChangeEvent<HTMLInputElement>) => setName(e.target.value)} placeholder="Type character name here"></input>
-            Level: <input type="number" className="number" value={level} onChange={(e: ChangeEvent<HTMLInputElement>) => setLevel(e.target.valueAsNumber)}></input>
-            Wis mod: <input type="number" className="number" value={wisdomModifier} onChange={(e: ChangeEvent<HTMLInputElement>) => setWisdomModifier(e.target.valueAsNumber)}></input>
+            Level: <NumberSelector value={level} onChange={(e: ChangeEvent<HTMLInputElement>) => setLevel(e.target.valueAsNumber)} />
+            Wis mod: <NumberSelector value={wisdomModifier} onChange={(e: ChangeEvent<HTMLInputElement>) => setWisdomModifier(e.target.valueAsNumber)} />
             <Button caption="Update character" onClick={onSubmit} />
         </div>
       )
