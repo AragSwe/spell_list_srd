@@ -13,7 +13,7 @@ export const UnusedSpellList = observer(() => {
             <h2>Unused spells</h2>
             <ul>
                 {  (spellStore.getUnusedSpells.length > 0 && spellStore.getUnusedSpells.map(s => 
-                    <li>
+                    <li key={s.id}>
                         <SpellListItem spell={s} />
                         <Button caption="Cast" onClick={() => spellStore.castKnownSpell(s.id)} />
                     </li>))

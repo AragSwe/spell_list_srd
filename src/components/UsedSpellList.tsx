@@ -15,7 +15,7 @@ export const UsedSpellList = observer(() => {
                 <Button caption="Refresh spells" onClick={() => spellStore.refreshSpells()} />
                 <ul>
                     { spellStore.getUsedSpells.map(s => 
-                        <li><SpellListItem spell={s} /></li>
+                        <li key={s.id}><SpellListItem spell={s} /></li>
                         )
                     }
                 </ul>
