@@ -9,17 +9,18 @@ export const UserForm = () => {
     const onSignIn = (googleResponse:GoogleLoginResponse | GoogleLoginResponseOffline) => {
         const loginResponse = googleResponse as GoogleLoginResponse;
         if(loginResponse) {
-            userStore.userToken = loginResponse.accessToken;
-            loginResponse.profileObj
+            userStore.setUserInfo(
+                loginResponse.accessToken,
+                loginResponse.profileObj.name);
         }
     }
 
-    const signOut = () => {
+    //const signOut = () => {
         //var auth2 = gapi.auth2.getAuthInstance();
         //auth2.signOut().then(function () {
         //  console.log('User signed out.');
         //});
-      }
+    //}
       
     return <div>
         { !loggedIn && <GoogleLogin
@@ -31,6 +32,6 @@ export const UserForm = () => {
             responseType='id_token'
             />
         }
-
+        { loggedIn && <p>Hello {userStore.user?.name}!</p> }
     </div>
 }
