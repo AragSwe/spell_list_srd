@@ -11,25 +11,7 @@ export type TSpell = {
 }
 
 export class SpellStore {
-  @observable knownSpells = [
-    {
-      id: 0,
-      name:'Flamestrike!',
-      level:3,
-      duration:null,
-      isUsed:false,
-      maxDuration: null,
-      description: "Deals MASSIVE damage to all enemies in a 10x10 feet cylinder."
-    },
-    {
-      id: 1,
-      name:'Buff allies!',
-      level:10,
-      duration:5,
-      isUsed:false,
-      maxDuration: 5,
-      description: "Give allies +5atk and +5dmg."
-    }] as TSpell[]
+  @observable knownSpells = [] as TSpell[]
 
   @action
   addKnownSpell(name: string, level: number, duration: number | null, description:string) {
