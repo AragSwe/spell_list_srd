@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Button } from "./Button";
 
 export type TToggleSection = {
     header:string,
@@ -13,7 +14,7 @@ export const ToggleSection = (props: TToggleSection) => {
     }
 
     return <>
-        <h2>{props.header} <input type="button" className="toggleButton" value="+" onClick={toggle}></input></h2>
+        <h2>{props.header} <Button caption="+" onClick={toggle} /></h2>
         {visible && props.children}
     </>
 }
